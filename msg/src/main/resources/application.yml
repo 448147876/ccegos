@@ -1,0 +1,16 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: msg
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8020/eureka/  #注册到服务器
+
+
+feign:
+  hystrix:
+    enabled: true
