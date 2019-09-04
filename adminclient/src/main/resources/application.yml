@@ -1,10 +1,5 @@
 server:
-  port: 8090
-
-
-spring:
-  application:
-    name: crm
+  port: 8040
 
 eureka:
   instance:
@@ -12,12 +7,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8020/eureka/  #注册到服务器
-
-feign:
-  hystrix:
-    enabled: true
-
-
+spring:
+  application:
+    name: adminclient
 
 management:
   endpoints:

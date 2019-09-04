@@ -1,10 +1,15 @@
 server:
-  port: 8090
-
+  port: 8060
 
 spring:
   application:
-    name: crm
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
 
 eureka:
   instance:
@@ -13,17 +18,18 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8020/eureka/  #注册到服务器
 
+
 feign:
   hystrix:
     enabled: true
 
 
-
 management:
+  server:
+    port: 8068
+  cloudfoundry:
+    enabled: true
   endpoints:
     web:
       exposure:
         include: '*'
-  endpoint:
-    health:
-      show-details: always

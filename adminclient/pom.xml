@@ -7,22 +7,21 @@
         <artifactId>ccegos</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>com.cceg.msg</groupId>
-    <artifactId>msg</artifactId>
+    <groupId>com.cceg.adminclient</groupId>
+    <artifactId>adminclient</artifactId>
     <version>1.0</version>
-    <name>msg</name>
-    <description>短信和邮件信息系统</description>
+    <name>adminclient</name>
+    <description>Demo project for Spring Boot</description>
 
 
     <dependencies>
         <dependency>
-            <groupId>com.cceg.api</groupId>
-            <artifactId>api</artifactId>
-            <version>1.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -30,13 +29,23 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
 
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

@@ -1,0 +1,14 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: adminserver
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8020/eureka/  #注册到服务器
+    healthcheck:
+      enabled: true

@@ -6,6 +6,8 @@ spring:
     name: msg
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:8020/eureka/  #注册到服务器
@@ -15,3 +17,16 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
